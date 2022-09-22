@@ -10,15 +10,21 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
+
         const elemento = document.querySelector('div')
-        elemento.style.position = 'absolute'
+        elemento.style.position = 'absolute' // posição Absoluta faz com que o elemtento sobreponha qualquer outro na pagina. 
         elemento.onmousemove = event => {
-            elemento.style.cursor = 'move'
+
+            elemento.style.cursor = 'move' // Mudando o estilo do cursor movimento enquanto esta na elemento (div) 
             
-            if(event.buttons){
+            if(event.buttons){//esta propriedade retorna se o botão do mouse está clicado
+                // Então retorna true ou false (0 ou 1).
                 
             event.target.style.top = `${event.clientY - (elemento.clientHeight / 2) }px`
+            // Esta lógica faz com a distância do elemento ao topo da pagina,
+            // receba o valor da posição do mouse no eixo Y, subtraido da sua altura divido por 2.  
             event.target.style.left = `${event.clientX - (elemento.clientWidth / 2) }px`
+            // Esta é a mesma lógica porém, manipulado com valores do eixo Y e a largura do elemento.  
         }
     }      
         
